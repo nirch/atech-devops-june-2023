@@ -2,7 +2,7 @@
 #!/bin/bash
 echo "Hello $USER"
 export COURSE_ID="DevOpsBootcampElevation"
-if [ -d ~/.token ]
+if [ -f ~/.token ]
 then
  if [[ $(stat -c '%a' ~/.token) != "600" ]]
  then
