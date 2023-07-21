@@ -2,17 +2,18 @@
 #!/bin/bash
 echo "Hello $USER"
 export COURSE_ID="DevOpsBootcampElevation"
-
+if [ -d ~/.token ]
  if [[ $(stat -c '%a' ~/.token) != "600" ]]
  then
    echo ".token file has too open permissions"
  fi
+fi
 
 
 umask 0022
 
 
-export PATH=$PATH:/home/newone/usercommands
+export PATH=$PATH:/home/$USER/usercommands
 
 date -u --iso-8601=seconds
 
