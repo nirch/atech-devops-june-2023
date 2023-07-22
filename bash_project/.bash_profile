@@ -1,36 +1,36 @@
 #!/bin/bash
-echo "HELLO,$USER"
+echo "HELLO, $USER"
 export COURSE_ID="DevOpsBootcampElevation"
-
-if[-f ~/.token]
+if [ -f ~/.token ]
 then
-if [[$(stat-c '%a' ~/.token)!="600"]]
-echo ".token file has to open permission"
-fi
-
+ if [[ $(stat -c '%a' ~/.token) != "600" ]]
+ then
+   echo ".token file has too open permissions"
+ fi
 else
-echo "file does not exit"
+ echo "file does not exist"
 fi
 
 umask 0022
+
 
 export PATH=$PATH:/home/newone/usercommands
 
 date -u --iso-8601=seconds
 
-alisa ltxt='ls.*txt'
+alias ltxt='ls *.txt'
 
-if [!-d ~/tmp]
+if [ ! -d ~/tmp ]
 then
-mkdir ~/tmp
+ mkdir ~/tmp
 else
-rm -rf ~/tmp/*
+ rm -rf ~/tmp/*
 fi
 
-if lsof -Pi:8080 -sTCP:LISTEN -t>/dev/null
+if lsof -Pi :8080 -sTCP:LISTEN -t >/dev/null
 then
-echo "Killing the proc running on 8080"
-kill -9 $(lsof -t i:8080)
+  echo "Killing the proc running on 8080.."
+  kill -9 $(lsof -t i:8080)
 else
-echo "No proc running on port 8080"
+  echo "No proc running on port 8080"
 fi
