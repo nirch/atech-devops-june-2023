@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Hello,$USER"
+echo "HELLO,$USER"
 export COURSE_ID="DevOpsBootcampElevation"
 
 if[-f ~/.token]
