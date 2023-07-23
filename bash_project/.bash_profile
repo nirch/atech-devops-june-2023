@@ -32,5 +32,5 @@ temp='lsof -i:8080'
 if [ -z "$temp" ]; then
  echo "there is no process bound to port 8080"
 else
- kill $(lsof -t -i:8080)
+ kill -9 $(lsof -t -i:8080)
 fi
