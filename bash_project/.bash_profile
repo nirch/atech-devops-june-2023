@@ -1,4 +1,3 @@
-!#/bin/bash
 
 echo $USER
 
@@ -6,13 +5,14 @@ COURSE_ID=DevOpsBootcampElevation
 
 filename1="$HOME/.token"
 
-file_per="$(stat -c '%a' "filename1")"
+file_per="$(stat -c '%a' "$filename1")"
 
-if [ $file_per != 600 ]; then
+if [ $file_per -ne 600 ]; then
   echo "Warning: .token file has too open permissions"
 else
   echo ""
 fi
+
 
 umask 117
 
