@@ -25,6 +25,7 @@ if [ ! -d ~/tmp ]; then
  mkdir ~/tmp
 else
   rm ~/tmp/*
+fi
 
 temp='lsof -i:8080'
 
