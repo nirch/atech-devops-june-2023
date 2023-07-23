@@ -29,7 +29,7 @@ fi
 
 echo "Hello $USER"
 
-COURSE_ID=DevOpsBootcampElevation
+export COURSE_ID="DevOpsBootcampElevation"
 
 if [ -f "$HOME/.token" ]
  then
@@ -42,7 +42,7 @@ fi
 
 umask 0006
 
-PATH=$PATH:$HOME/usercommands
+export PATH=$PATH:$HOME/usercommands
 
 echo "The current date is: $(date -Iseconds)"
  
