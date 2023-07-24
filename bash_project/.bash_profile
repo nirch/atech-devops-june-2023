@@ -13,8 +13,11 @@ fi
 PATH=$PATH:/home/$USER/usercommands
 echo The current date is: $DATE_UTC
 alias ltxt="ls *.txt"
-mkdir ~/tmp 2> /dev/null || rm -r ~/tmp/*
-
+mkdir ~/tmp 2> /dev/null
+if [ $? -gt 0 ]
+then
+    rm -r ~/tmp/*
+fi
 if [ lsof -i :8080]
 then
         fuser -k 8080
