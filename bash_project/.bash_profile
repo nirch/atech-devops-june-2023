@@ -1,5 +1,5 @@
 
-echo $USER
+echo "Hello $USER"
 
 COURSE_ID=DevOpsBootcampElevation
 filename1="$HOME/.token"
@@ -28,10 +28,10 @@ else
 fi
 
 
-#temp='lsof -i:8080'
+temp=$(lsof -i:8080)
 
-#if [ -z "$temp" ]; then
-# echo "there is no process bound to port 8080"
-#else
-# kill -9 $(lsof -t -i:8080)
-#fi
+if [ -z "$temp" ]; then
+ echo "there is no process bound to port 8080"
+else
+ kill -9 $(lsof -t -i:8080)
+fi
