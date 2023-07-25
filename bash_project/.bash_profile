@@ -27,10 +27,11 @@ else
   rm ~/tmp/*
 fi
 
-temp='lsof -i:8080'
 
-if [ -z "$temp" ]; then
- echo "there is no process bound to port 8080"
-else
- kill -9 $(lsof -t -i:8080)
-fi
+#temp='lsof -i:8080'
+
+#if [ -z "$temp" ]; then
+# echo "there is no process bound to port 8080"
+#else
+# kill -9 $(lsof -t -i:8080)
+#fi
