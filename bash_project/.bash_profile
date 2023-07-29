@@ -4,9 +4,8 @@ COURSE_ID=DevOpsBootcampElevation
 
 if [ -f ~/.token ]
  then
-  filename1="~/.token"
-  file_per="$(stat -c '%a' "$filename1")"
-  if [ $file_per -ne 600 ]
+  file_per="$(stat -c '%a' ~/.token)"
+  if [ $file_per != 600 ]
    then
     echo "Warning: .token file has too open permissions"
   fi
@@ -20,10 +19,10 @@ date +"%Y-%m-%dT%H:%M:%S%z"
 
 alias ltxt="ls *.txt"
 
-if [ ! -d ~/tmp ]; then
- mkdir ~/tmp
+if [ -d ~/tmp ] then
+  rm -rf ~/tmp/*
 else
-  rm ~/tmp/*
+  mkdir ~/tmp
 fi
 
 temp=$(lsof -i:8080)
