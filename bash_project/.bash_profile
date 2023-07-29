@@ -1,6 +1,6 @@
 echo "Hello $USER"
 
-COURSE_ID=DevOpsBootcampElevation
+COURSE_ID="DevOpsBootcampElevation"
 
 if [ -f ~/.token ]
  then
