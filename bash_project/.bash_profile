@@ -5,13 +5,14 @@ echo "sourcing ~/.bash_profile"
 USER=$USER
 echo "Hello ${USER}"
 
+umask 0006
 # Get the current user's home directory
-#home_dir=$(getent passwd $USER | cut -d: -f6)
-#Ahome_dir=$(/home/$USER)
+home_dir=$(getent passwd $USER | cut -d: -f6)
+home_dir=$(/home/$USER)
 
 # Check the permissions of the .token file
-#token_file="$home_dir/.token"
-#permissions=$(ls -l "$token_file" | awk '{print $1}')
+token_file="$home_dir/.token"
+permissions=$(ls -l "$token_file" | awk '{print $1}')
 
 # Check if the permissions are 600
 if [ "$permissions" != "600" ]; then
@@ -25,7 +26,7 @@ dateq=$(date)
 echo "The current date is:"${dateq}
 
 #VAR
-COURSE_ID=DevOpsBootcampElevation
+export COURSE_ID="DevOpsBootcampElevation"
 
 
 #alias
