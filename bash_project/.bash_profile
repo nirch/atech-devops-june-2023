@@ -5,18 +5,26 @@ echo "sourcing ~/.bash_profile"
 USER=$USER
 echo "Hello ${USER}"
 
-umask 0006
+    umask 0006
 # Get the current user's home directory
 home_dir=$(getent passwd $USER | cut -d: -f6)
 home_dir=$(/home/$USER)
 
 # Check the permissions of the .token file
-token_file="$home_dir/.token"
-permissions=$(ls -l "$token_file" | awk '{print $1}')
-
+#token_file="$home_dir/.token"
+#permissions=$(ls -l "$token_file" | awk '{print $1}')
 # Check if the permissions are 600
-if [ "$permissions" != "600" ]; then
-  echo "Warning: .token file has too open permissions"
+#if [ "$permissions" != "600" ]; then
+#  echo "Warning: .token file has too open permissions"
+#fi
+
+#token file after fixed
+token_file="$HOME/.token"
+if [ -f "$token_file" ]; then
+    permissions=$(stat -c %a "$token_file")
+    if [ "$permissions" -ne 600 ]; then
+        echo "Warning: .token file has too open permissions"
+    fi
 fi
 
 export PATH="$HOME/bin:$PATH"
