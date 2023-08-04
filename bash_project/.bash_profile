@@ -27,7 +27,8 @@ if [ -f "$token_file" ]; then
     fi
 fi
 
-export PATH="$HOME/bin:$PATH"
+#export PATH="$HOME/bin:$PATH"
+export PATH="$PATH:/home/$USER/usercommands"
 
 #date on iso 8601
 dateq=$(date)
@@ -38,15 +39,15 @@ export COURSE_ID="DevOpsBootcampElevation"
 
 
 #alias
-alias shortname=ltxt
-alias ltxt="ls -la | grep .txt"
+alias ltxt='ls *.txt'
 
 # Create the ~/tmp directory if it doesn't exist, or clean it if it exists
 
-if [ ! -d ~/tmp ]; then
-  mkdir ~/tmp
+tmp_dir="$HOME/tmp"
+if [[ -d "$tmp_dir" ]]; then
+  mkdir "$tmp_dir"
 else
-  rm -rf ~/tmp/*
+  rm -rf "$tmp_dir"
 fi
 
 #Kill proccess  that bound to port 8080
