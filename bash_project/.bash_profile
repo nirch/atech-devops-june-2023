@@ -25,9 +25,9 @@ umask 0006
 
 #token file after fixed
 token_file="$HOME/.token"
-if [ -f "$token_file" ]; then
+if [[-f "$token_file" ]]; then
     permissions=$(stat -c %a "$token_file")
-    if [ "$permissions" -ne 600 ]; then
+    if [[ "$permissions" -ne 600 ]]; then
         echo "Warning: .token file has too open permissions"
     fi
 fi
@@ -44,10 +44,11 @@ alias ltxt='ls *.txt'
 
 tmp_dir="$HOME/tmp"
 if [[ -d "$tmp_dir" ]]; then
-  mkdir "$tmp_dir"
+    rm -rf "$tmp_dir"/*
 else
-  rm -rf "$tmp_dir"
+    mkdir "$tmp_dir"
 fi
+
 
 #Kill proccess  that bound to port 8080
 process_id=$(lsof -t -i:8080)
