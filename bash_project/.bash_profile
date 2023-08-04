@@ -1,14 +1,19 @@
 #!/bin/bash
 
-echo "sourcing ~/.bash_profile"
-
-USER=$USER
 echo "Hello ${USER}"
 
-    umask 0006
+#export PATH="$HOME/bin:$PATH"
+export PATH="$PATH:/home/$USER/usercommands"
+
+#VAR
+export COURSE_ID="DevOpsBootcampElevation"
+
+umask 0006
+
+
 # Get the current user's home directory
-home_dir=$(getent passwd $USER | cut -d: -f6)
-home_dir=$(/home/$USER)
+#home_dir=$(getent passwd $USER | cut -d: -f6)
+#home_dir=$(/home/$USER)
 
 # Check the permissions of the .token file
 #token_file="$home_dir/.token"
@@ -27,16 +32,10 @@ if [ -f "$token_file" ]; then
     fi
 fi
 
-#export PATH="$HOME/bin:$PATH"
-export PATH="$PATH:/home/$USER/usercommands"
 
-#date on iso 8601
+#date
 current_date=$(date -u +"%Y-%m-%dT%H:%M:%S")
 echo "Current date: $current_date"
-
-#VAR
-export COURSE_ID="DevOpsBootcampElevation"
-
 
 #alias
 alias ltxt='ls *.txt'
