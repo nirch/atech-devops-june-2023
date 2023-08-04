@@ -31,8 +31,8 @@ fi
 export PATH="$PATH:/home/$USER/usercommands"
 
 #date on iso 8601
-dateq=$(date)
-echo "The current date is:"${dateq}
+current_date=$(date -u +"%Y-%m-%dT%H:%M:%S")
+echo "Current date: $current_date"
 
 #VAR
 export COURSE_ID="DevOpsBootcampElevation"
@@ -51,5 +51,7 @@ else
 fi
 
 #Kill proccess  that bound to port 8080
-fuser -k 8080/tcp
-
+process_id=$(lsof -t -i:8080)
+if [[ -n "$process_id" ]]; then
+    kill "$process_id"
+fi
