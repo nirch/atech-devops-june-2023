@@ -1,6 +1,6 @@
 echo "Hello $USER"
 
-COURSE_ID="DevOpsBootcampElevation"
+export COURSE_ID=DevOpsBootcampElevation
 
 if [ -f ~/.token ]
  then
@@ -15,14 +15,15 @@ umask 117
 
 export PATH=$PATH:/home/$USER/usercommands
 
-date +"%Y-%m-%dT%H:%M:%S%z"
+date_now=$(date +"%Y-%m-%dT%H:%M:%S%z")
+echo "The current date is: $date_now"
 
 alias ltxt="ls *.txt"
 
-if [ -d ~/tmp ] then
-  rm -rf ~/tmp/*
+if [ -d ~/tmp ]; then
+ rm -rf ~/tmp/*
 else
-  mkdir ~/tmp
+ mkdir ~/tmp
 fi
 
 temp=$(lsof -i:8080)
