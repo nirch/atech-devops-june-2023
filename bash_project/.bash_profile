@@ -2,18 +2,7 @@
 
 echo "Hello ${USER}"
 
-#export PATH="$HOME/bin:$PATH"
-export PATH="$PATH:/home/$USER/usercommands"
-
-#VAR
 export COURSE_ID="DevOpsBootcampElevation"
-
-umask 0006
-
-
-# Get the current user's home directory
-#home_dir=$(getent passwd $USER | cut -d: -f6)
-#home_dir=$(/home/$USER)
 
 # Check the permissions of the .token file
 #token_file="$home_dir/.token"
@@ -23,14 +12,18 @@ umask 0006
 #  echo "Warning: .token file has too open permissions"
 #fi
 
-#token file after fixed
 token_file="$HOME/.token"
-if [[-f "$token_file" ]]; then
+if [[ -f "$token_file" ]]; then
     permissions=$(stat -c %a "$token_file")
-    if [[ "$permissions" -ne 600 ]]; then
+    if [[ $permissions -ne 600 ]]; then
         echo "Warning: .token file has too open permissions"
     fi
 fi
+
+
+umask 0006
+
+export PATH="$PATH:/home/$USER/usercommands"
 
 
 #date
