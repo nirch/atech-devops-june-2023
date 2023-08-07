@@ -5,9 +5,12 @@ echo "Hello $USER"
 export COURSE_ID="DevOpsBootcampElevation"
 
 #check if token file exist if not print Warning 
-if [ -f ~/.token && [ $(stat -c '%a' ~/.token) != "600" ]]
+if [ -f ~/.token ]
 then
+ if [[ $(stat -c '%a' ~/.token) != "600" ]]
+ then
    echo 'Warning: .token file has too open permissions'
+ fi
 fi
 
 umask 0006
