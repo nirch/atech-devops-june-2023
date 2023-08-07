@@ -23,12 +23,13 @@ date -u --iso-8601=seconds
 alias ltxt="ls *.txt"
 
 #check if temp exist if exist remove content
-if [! -d ~/tmp]
+if [ ! -d $HOME/tmp ]
 then
-mkdir ~/tmp
+ mkdir $HOME/tmp
 else
-rm -rf ~/tmp/*
+ rm -rf $HOME/tmp/*
 fi
+
 
 #kill process thats runs on port 8080
 pi=lsof -i:8080
