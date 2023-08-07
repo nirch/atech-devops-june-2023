@@ -7,7 +7,7 @@ export COURSE_ID="DevOpsBootcampElevation"
 #check if token file exist if not print Warning 
 if [-f "$HOME/.token" && $(stat -c '%a' $HOME/.token) !="600"]
 then
-echo "Warning: .token file has to open permissions"
+echo 'Warning: .token file has to open permissions'
 fi
 
 unmask 0006
