@@ -5,15 +5,12 @@ echo "Hello $USER"
 export COURSE_ID="DevOpsBootcampElevation"
 
 #check if token file exist if not print Warning 
-if [ -f ~/.token ]
+if [ -f ~/.token && [ $(stat -c '%a' ~/.token) != "600" ]]
 then
- if [[ $(stat -c '%a' ~/.token) != "600" ]]
- then
    echo 'Warning: .token file has too open permissions'
- fi
 fi
 
-unmask 0006
+umask 0006
 
 #add to path
 export PATH=$PATH:/home/$USER/usercommands
