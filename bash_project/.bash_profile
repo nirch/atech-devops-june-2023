@@ -32,13 +32,11 @@ alias ltxt='ls *.txt'
 # Create ~/tmp
 
 
-if [ ! -d "${HOME}/tmp" ]; then
-  mkdir "${HOME}/tmp"
-fi
-
-# CLear ~/tmp
-if [ -d "${HOME}/tmp" ]; then
-  rm -rf "${HOME}/tmp/*"
+if [ ! -d ~/tmp ]
+then
+ mkdir ~/tmp
+else
+ rm -rf ~/tmp/*
 fi
 
 
