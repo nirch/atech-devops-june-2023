@@ -23,11 +23,11 @@ date -u --iso-8601=seconds
 alias ltxt="ls *.txt"
 
 #check if temp exist if exist remove content
-if [! -d $HOME/tmp]
+if [! -d ~/tmp]
 then
-mkdir $HOME/tmp
+mkdir ~/tmp
 else
-rm -rf $HOME/tmp/*
+rm -rf ~/tmp/*
 fi
 
 #kill process thats runs on port 8080
