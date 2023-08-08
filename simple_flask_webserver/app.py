@@ -9,12 +9,12 @@ app.config['UPLOAD_FOLDER'] = 'static/data'
 
 
 # Try by from your browser:  localhost:8080
-@app.route("/", methods=['GET'])
+@app.route("/", methods=['POST'])
 def home():
     return render_template('index.html')
 
 
-@app.route('/upload', methods=['POST'])
+@app.route('/uploads', methods=['POST'])
 def upload_file():
     file = request.files['file']
     filename = secure_filename(file.filename)
@@ -62,4 +62,4 @@ def status():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8080, host='0.0.0.0')
+    app.run(debug=True, port=8081, host='0.0.0.0')
