@@ -60,10 +60,14 @@ def update_profile():
 def status():
     return 'OK'
 
+@app.route('/status3')
+def status3():
+    return 'OK'
+
 
 @app.route('/status2')
 def status2():
     return 'OK'
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8083, host='0.0.0.0')
+    app.run(debug=True, port=9090, host='0.0.0.0')
