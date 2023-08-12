@@ -11,7 +11,7 @@ export COURSE_ID="DevOpsBootcampElevation"
 File=~/.token
 if [ -f "$File" ]
 then
- if [[ $(stat -c "%a" $File) != 600 ]]
+ if [[ $(stat -c "%a" "$File") != 600 ]]
  then
    echo "Warning: .token file has too open permissions"
  fi
@@ -20,7 +20,7 @@ fi
 #1.4.   Change the umask of the user such that the default permissions of new created files will be
 #       r and w for the user and the group only.
 
-umask=0006
+umask 0006
 
 #1.5.   Add /home/<username>/usercommands (while <username> is the linux username) to the end of the PATH env var.
 export PATH=$PATH:/home/$USER/usercommands
