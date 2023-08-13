@@ -13,13 +13,13 @@
     umask 006
 
     export PATH="$PATH:/home/$USER/usercomands"
-    _date=$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")
-    echo the current date is : $_date
+    newdate=$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")
+    echo the current date is : $newdate
     alias ltxt='ls *.txt'
    if [ -d ~/tmp ] ;then
         rm -f ~/tmp/*
-    else
-        mkdir ~/tmp
+    # else
+       # mkdir ~/tmp
     fi
         process_id=$(lsof -i:8080)
         if [ -n "$process_id" ]; then
