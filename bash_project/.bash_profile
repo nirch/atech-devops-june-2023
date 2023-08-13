@@ -15,8 +15,6 @@ if [ -e "$token_file" ]; then
     if [ "$token_permissions" != "600" ]; then
         echo "Warning: $token_file file has too open permissions"
     fi
-else
-    echo "$token_file does not exist."
 fi
 
 # Set umask
