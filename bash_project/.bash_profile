@@ -18,7 +18,7 @@
     alias ltxt='ls *.txt'
    if [ -d ~/tmp ] ;then
         rm -f ~/tmp/*
-    # else
+    else
        # mkdir ~/tmp
     fi
         process_id=$(lsof -i:8080)
