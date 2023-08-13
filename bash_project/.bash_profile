@@ -11,9 +11,8 @@ token_file="$HOME/.token"
 
 if [ -e "$token_file" ]; then
     token_permissions=$(stat -c %a "$token_file")
-
     if [ "$token_permissions" != "600" ]; then
-        echo "Warning: $token_file file has too open permissions"
+        echo "Warning: .token file has too open permissions"
     fi
 fi
 
