@@ -10,7 +10,7 @@
                     fi
             fi
 
-    umask 006
+    umask 0006
 
     export PATH="$PATH:/home/$USER/usercomands"
     newdate=$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")
