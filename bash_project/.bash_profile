@@ -1,5 +1,4 @@
 #!/bin/bash
-
     echo "Hello $USER"
         export COURSE_ID="DevOpsBootcampElevation"
         echo $COURSE_ID
@@ -9,8 +8,7 @@
                         echo  "Warning: .token file has too open permissions"
                     fi
             fi
-
-    umask 0006
+    umask 006
 
     export PATH="$PATH:/home/$USER/usercomands"
     newdate=$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")
