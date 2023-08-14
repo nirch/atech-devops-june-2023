@@ -11,7 +11,7 @@ then
 fi
 
 # 666-006=660 -> 110 110 000
-umask=0006
+umask 0006
 
 export PATH=$PATH:/home/$USER/usercommands
 
