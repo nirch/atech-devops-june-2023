@@ -2,16 +2,16 @@
 echo "Hello $USER"
 export COURSE_ID=DevOpsBootcampElevation
 
-cd $HOME
-
-if [[ $(stat -c '%a' ~/.token) != "600" ]]
+if [ -f ~/.token ]
 then
-   echo "Warning: .token file has too open permissions"
-
+  if [[ $(stat -c '%a' ~/.token) != "600" ]]
+  then
+     echo "Warning: .token file has too open permissions"
+  fi
 fi
 
 # 666-006=660 -> 110 110 000
-umask=006
+umask=0006
 
 export PATH=$PATH:/home/$USER/usercommands
 
@@ -22,7 +22,6 @@ date -u --iso-8601=seconds
 # all files with .txt extension -> ls *.txt
 alias ltxt='ls *.txt'
 
-cd $HOME
 if [ -d ~/tmp ]
 then
    rm -rf ~/tmp/*
