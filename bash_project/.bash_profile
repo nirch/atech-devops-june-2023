@@ -1,25 +1,33 @@
-#!/bin/bash
-    echo "Hello $USER"
-        export COURSE_ID="DevOpsBootcampElevation"
-        echo $COURSE_ID
-            if [ -e "$HOME/.token" ]; then
-                permissions=$(stat -c "%a" "$HOME/.token")
-                    if [ "$permissions"!="600" ]; then
-                        echo  "Warning: .token file has too open permissions"
-                    fi
-            fi
-    umask 006
+# Greet the user
+echo "Hello $USER"
 
-    export PATH="$PATH:/home/$USER/usercomands"
-    newdate=$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")
-    echo the current date is : $newdate
-    alias ltxt='ls *.txt'
-   if [ -d ~/tmp ] ;then
-        rm -f ~/tmp/*
-    else
-       # mkdir ~/tmp
+# Define environment variable
+export COURSE_ID="DevOpsBootcampElevation"
+
+# Check .token file permissions
+if [ -f ~/.token ]; then
+    perms=$(stat -c %a ~/.token)
+    if [ "$perms" -ne 600 ]; then
+        echo "Warning: .token file has too open permissions"
     fi
-        process_id=$(lsof -i:8080)
-        if [ -n "$process_id" ]; then
-        kill -9 $process_id
-        fi
+fi
+
+# Set umask for user and group
+umask 0077
+
+# Add directory to PATH
+export PATH=$PATH:/home/$USER/usercommands
+
+# Print current date in ISO 8601 format
+echo $(date -u +"%Y-%m-%dT%H:%M:%S%z")
+
+# Define command alias
+alias ltxt='ls *.txt'
+
+# Create or clean ~/tmp directory
+[ -d ~/tmp ] && rm -rf ~/tmp
+mkdir -p ~/tmp
+
+# Kill process on port 8080 if it exists
+pid=$(lsof -t -i:8080)
+[ ! -z "$pid" ] && kill -9 $pid
