@@ -16,6 +16,8 @@ fi
 
 ####### change the umask of the user #######
 umask 0006
+#######add to PATH#####
+PATH=$PATH/home/$username/usercommands
 
 ####### print date in ISO format #######
 echo 'The current date is:' date --iso-8601=s
