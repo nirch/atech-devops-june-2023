@@ -7,10 +7,12 @@ COURSE_ID='DevOpsBootcampElevation'
 
 ####### check if .token permission=600 #######
 token="$HOME/.token"
-per=$(stat --format="%a" token)
 if [ -a token ]; then
+   per=$(stat --format="%a" token)
    if [[ $per != 600 ]]; then
       echo Warning: .token file has too open permissions
+   else 
+      echo 
    fi
 fi
 
