@@ -13,7 +13,7 @@ if [ -f ~/.token ]
 then
     if [[ $(stat -c '%a' .token) != "600" ]]
     then
-        echo 'Worning: .token file has too open permiisions'
+        echo 'Warning: .token file has too open permissions'
     fi
 fi
 
