@@ -3,7 +3,7 @@ username=$(whoami)
 echo Hello $username
 
 ####### define COURSE_ID #######
-COURSE_ID='DevOpsBootcampElevation'
+export COURSE_ID='DevOpsBootcampElevation'
 
 ####### check if .token permission=600 #######
 """
