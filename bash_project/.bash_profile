@@ -10,7 +10,7 @@ token="$HOME/.token"
 if [ -a token ]; then
    per=$(stat --format="%a" token)
    if [[ $per != 600 ]]; then
-        echo Warning: .token file has too open permissions
+      echo Warning: .token file has too open permissions
    fi
 fi
 
