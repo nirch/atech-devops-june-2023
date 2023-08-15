@@ -32,4 +32,7 @@ else
 fi
 
 ####### kill 8080 #######
-kill $(lsof -t -i:8080)
+#kill $(lsof -t -i:8080)
+kill $(lsof -i :8080 -t)
+
+
