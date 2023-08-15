@@ -26,9 +26,9 @@ alias ltxt='ls * | grep \.txt'
 ####### create or clean ~/tmp #######
 DIR='~/tmp'
 if [ -d “$DIR” ]; then
-rm /home/$username/tmp/*
+   rm /home/$username/tmp/*
 else
-mkdir ~/tmp
+   mkdir ~/tmp
 fi
 
 ####### kill 8080 #######
