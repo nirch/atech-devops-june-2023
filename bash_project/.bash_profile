@@ -18,7 +18,7 @@ fi
 umask 0660
 
 ####### print date in ISO format #######
-date --iso-8601=s
+echo 'The current date is:' date --iso-8601=s
 
 ####### list all file with .txt  #######
 alias ltxt='ls * | grep \.txt'
