@@ -32,8 +32,6 @@ else
 fi
 
 ####### kill 8080 #######
-#kill $(lsof -i :8080 -t)
-
 pid=$(lsof -t -i:8080)
 if [ -n "$pid" ]; then
     kill "$pid"
