@@ -5,6 +5,9 @@ echo Hello $username
 ####### define COURSE_ID #######
 COURSE_ID='DevOpsBootcampElevation'
 
+####### create .token file ######
+touch .token
+
 ####### check if .token permission=600 #######
 per=$(stat --format="%a" .token)
 
