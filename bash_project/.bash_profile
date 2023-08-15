@@ -6,22 +6,12 @@ echo Hello $username
 export COURSE_ID='DevOpsBootcampElevation'
 
 ####### check if .token permission=600 #######
-"""
 token="$HOME/.token"
-if [ -f token ]; then
-   per=$(stat --format="%a" token)
+if [ -f "$token" ]; then
+   per=$(stat --format="%a" "$token")
    if [[ $per != 600 ]]; then
       echo Warning: .token file has too open permissions
    fi
-fi
-"""
-token_file="$HOME/.token"
-
-if [ -e "$token_file" ]; then
-    token_permissions=$(stat -c %a "$token_file")
-    if [ "$token_permissions" != "600" ]; then
-        echo "Warning: .token file has too open permissions"
-    fi
 fi
 
 ####### change the umask of the user #######
