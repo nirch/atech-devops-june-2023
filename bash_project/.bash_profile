@@ -6,10 +6,10 @@
 echo "Hello $(whoami)"
 
 # 2. build env var
-export COURSE_ID=DEVOpsBootCampElevation
+export COURSE_ID="DEVOpsBootCampElevation"
 
 # 3. check permission for .token
-if [ state -c "%a" .token -nq "600" ]
+if [ $(state -c "%a" .token) != "600" ]
 then
     echo "Worning: .token file has too open permiisions"
 fi
