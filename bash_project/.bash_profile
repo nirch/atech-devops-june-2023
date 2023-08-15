@@ -6,7 +6,7 @@
 echo "Hello $(whoami)"
 
 # 2. build env var
-export COURSE_ID="DevOpsBootCampElevation"
+export COURSE_ID="DevOpsBootcampElevation"
 
 # 3. check permission for .token
 if [ -f ~/.token ]
