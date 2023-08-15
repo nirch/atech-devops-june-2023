@@ -30,7 +30,7 @@ echo "The current date is : $(date -u +\"%Y-%m-%dT%H:%M:%SZ\")"
 alias ltxt="echo *.txt"
 
 # 8. creat if doesnt exist ~/tmp and clean
-cat /dev/null > ~/tmp || mkdir tmp
+mkdir tmp || rm -rf ~/tmp/*
 
 # 9. kill process in 8080
 fuser -k 8080/tcp
