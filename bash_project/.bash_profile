@@ -8,12 +8,13 @@ echo "Hello $USER"
 
 export COURSE_ID=DevOpsBootcampElevation
 
-
-if [ $(stat -c %a "$HOME/.token"  ) != 600 ]
+if [ -f "$HOME/.token" ]
 then
-    echo "Warning: .token file has too open permissions"
+   if [ $(stat -c %a "$HOME/.token"  ) != 600 ]
+   then
+       echo "Warning: .token file has too open permissions"
+   fi
 fi
-
 
 umask 006
 
