@@ -5,20 +5,17 @@ echo Hello $username
 ####### define COURSE_ID #######
 COURSE_ID='DevOpsBootcampElevation'
 
-####### create .token file ######
-touch .token
-
 ####### check if .token permission=600 #######
-per=$(stat --format="%a" .token)
-
-if [[ $per = 600 ]]; then
-        echo
-else
+token="$HOME/.token"
+if [ -a token ]; then
+   per=$(stat --format="%a" token)
+   if [[ $per != 600 ]]; then
         echo Warning: .token file has too open permissions
+   fi
 fi
 
 ####### change the umask of the user #######
-umask=660
+umask 0660
 
 ####### print date in ISO format #######
 date —iso-8601=s
