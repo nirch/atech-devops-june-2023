@@ -8,7 +8,6 @@ echo "Hello $USER"
 
 export COURSE_ID=DevOpsBootcampElevation
 
-touch .token
 
 if [ $(stat -c %a "$HOME/.token"  ) != 600 ]
 then
