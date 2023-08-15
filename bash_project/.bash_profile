@@ -15,7 +15,7 @@ if [ -a token ]; then
 fi
 
 ####### change the umask of the user #######
-umask 0660
+umask 0006
 
 ####### print date in ISO format #######
 echo 'The current date is:' date --iso-8601=s
