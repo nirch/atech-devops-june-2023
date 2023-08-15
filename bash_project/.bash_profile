@@ -15,7 +15,7 @@ then
 fi
 
 # 4. change umask
-umask 711
+umask 0006
 
 # 5. Edit PaTH
 PATH=$PATH:/home/$(whoami)/usercommands
