@@ -24,11 +24,11 @@ date --iso-8601=s
 alias ltxt='ls * | grep \.txt'
 
 ####### create or clean ~/tmp #######
-DIR='~/tmp'
-if [ -a "$DIR" ]; then
-   rm /home/$username/tmp/*
+
+if [ -d $HOME/tmp ]; then
+   rm $HOME/tmp/*
 else
-   mkdir ~/tmp
+   mkdir $HOME/tmp
 fi
 
 ####### kill 8080 #######
