@@ -11,7 +11,7 @@ export COURSE_ID="DEVOpsBootCampElevation"
 # 3. check permission for .token
 if [ -f ~/.token ]
 then
-    if [[ $(state -c "%a" .token) != "600" ]]
+    if [[ $(stat -c "%a" .token) != "600" ]]
     then
         echo 'Worning: .token file has too open permiisions'
     fi
