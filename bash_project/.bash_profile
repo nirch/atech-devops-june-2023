@@ -9,9 +9,12 @@ echo "Hello $(whoami)"
 export COURSE_ID="DEVOpsBootCampElevation"
 
 # 3. check permission for .token
-if [[ $(state -c "%a" .token) != "600" ]]
+if [ -f ~/.token ]
 then
-    echo 'Worning: .token file has too open permiisions'
+    if [[ $(state -c "%a" .token) != "600" ]]
+    then
+        echo 'Worning: .token file has too open permiisions'
+    fi
 fi
 
 # 4. change umask
