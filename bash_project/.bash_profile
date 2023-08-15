@@ -15,7 +15,7 @@ then
 fi
 
 
-umask 660
+umask 006
 
  
 export PATH=$PATH:$HOME/usercommands
