@@ -20,7 +20,7 @@ umask 0006
 PATH=$PATH/home/$username/usercommands
 
 ####### print date in ISO format #######
-echo 'The current date is:' date -u --iso-8601=seconds
+date -u --iso-8601=s
 
 
 ####### list all file with .txt  #######
